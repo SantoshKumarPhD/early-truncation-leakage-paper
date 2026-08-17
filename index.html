@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Early-Truncation and Information Leakage in Small Non-Reasoning-Tuned Language Models</title>
+  <meta name="description" content="A study of early-truncation answer leakage in a matched Qwen2.5 model family spanning 0.5B to 7B parameters.">
+</head>
+<body style="font-family: Georgia, serif; max-width: 700px; margin: 60px auto; line-height: 1.6; color: #222;">
+  <h1>Early-Truncation and Information Leakage in Small Non-Reasoning-Tuned Language Models</h1>
+  <p><strong>Dr. Santosh Kumar</strong><br>
+  Senior AI Executive<br>
+  santoshskumarphd@gmail.com</p>
+
+  <h2>Abstract</h2>
+  <p>Chain-of-thought (CoT) reasoning traces are increasingly used as an interpretability aid, yet whether small
+  language models' answers are genuinely determined by the reasoning they display, or already fixed well
+  before the trace completes, remains poorly characterized outside the frontier end of the model-size spectrum.
+  We present a systematic, inference-only study of early-truncation answer leakage in a matched Qwen2.5
+  model family spanning 0.5B to 7B parameters, in both base and instruction-tuned variants, on GSM8K.
+  Using organic truncation (no forced interruption), we measure the point at which an answer first becomes
+  recoverable, the rate at which forced early answers diverge from the full-trace answer, and the gap
+  between free continuation and forced extraction at matched prefixes, throughout tracking commitment rate
+  as an explicit covariate to guard against abstention confounds. We find that leakage point does not scale
+  monotonically: it rises from 0.5B through 3B before dropping sharply at 7B, and a mixed-effects model
+  shows truncation robustness depends significantly on scale only once the comparison range extends to 7B
+  (p&lt;0.001), a trend invisible within 0.5B–3B alone. Instruction-tuned models show consistently larger
+  detection–extraction gaps than their base counterparts at matched scale, coupled with measurably higher
+  hedging under forced extraction. These results suggest that truncation-based CoT diagnostics calibrated on
+  a narrow small-model range can substantially underestimate the robustness of a nearby larger small model,
+  with direct implications for on-device deployment settings where such lightweight diagnostics are most
+  needed.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href="early_truncation_leakage_small_reasoning_models.pdf">Download the full paper (PDF)</a></li>
+  </ul>
+</body>
+</html>
